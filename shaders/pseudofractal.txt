@@ -1,0 +1,47 @@
+// console commands
+// 'xs pseudofractal xscale yscale zscale distOrder seed threshold cleaning'
+
+float process (vec3 p, float minkowskiDistanceOrder, float pseudoFractalModulo, float threshold, vec3 scale) {
+	//coordinate scaling
+	p *= scale;
+
+	// squared minkowski distance
+	p = pow(abs(p), vec3(minkowskiDistanceOrder));
+	float d = pow(p.x + p.y + p.z, 2. / minkowskiDistanceOrder);
+	
+	// pseudofractal
+	float s = clamp(mod(d, pseudoFractalModulo) / pseudoFractalModulo, 0., 1.);
+
+	// thresholding
+	return threshold == 0. || s > threshold ? 1. : 0.;
+}
+
+float map(vec3 v) {
+	vec3 scale = vec3(abs(iArgs[0]), abs(iArgs[1]), abs(iArgs[2]));
+	float minkowskiDistanceOrder = max(iArgs[3], 0.); // 2. is euclidean distance
+	float pseudoFractalModulo = iArgs[4];
+	float threshold = clamp(iArgs[5], 0., 1.);
+	bool cleaning = iArgs[6] > 0.;
+
+	if (length(scale) == 0.) {
+		scale = vec3(1.);
+	}
+
+	// coordinate from the center of the volume
+	vec3 p = v - iVolumeSize * 0.5 + 0.5;
+
+	float c = process(p, minkowskiDistanceOrder, pseudoFractalModulo, threshold, scale);
+
+	if (c && cleaning) {
+		float u = process(p + vec3(0., 0., 1.), minkowskiDistanceOrder, pseudoFractalModulo, threshold, scale);
+		float d = process(p + vec3(0., 0., -1.), minkowskiDistanceOrder, pseudoFractalModulo, threshold, scale);
+		float l = process(p + vec3(1., 0., 0.), minkowskiDistanceOrder, pseudoFractalModulo, threshold, scale);
+		float r = process(p + vec3(-1., 0., 0.), minkowskiDistanceOrder, pseudoFractalModulo, threshold, scale);
+		float f = process(p + vec3(0., 1., 0.), minkowskiDistanceOrder, pseudoFractalModulo, threshold, scale);
+		float b = process(p + vec3(0., -1., 0.), minkowskiDistanceOrder, pseudoFractalModulo, threshold, scale);
+
+		c = (u + d + l + r + f + b) > 0. ? 1. : 0.;
+	}
+
+	return c;
+}
