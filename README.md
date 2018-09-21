@@ -31,7 +31,7 @@ In MagicaVoxel, execute **xs pseudofractal 1.0 1.0 1.0 1.01 26. 0.4 0** in its c
 
 ## Additionnal notes
 
- * [Alien](https://twitter.com/LienTheAlien) is the one who first introduced me to pseudofractals, so thank to him.
+ * Thank to [Alien](https://twitter.com/LienTheAlien) who first introduced me to pseudofractals ;)
  * Check Jes Wolfe's talk on the subject ([youtube](https://t.co/NcJOgdn0bu)) if you want to learn more about pseudofractals.
  * If you're interested in this kind of structure generation but want something more predictable and less random, please check [cellular-automata-voxel-shader](https://github.com/kchapelier/cellular-automata-voxel-shader).
 
