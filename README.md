@@ -18,8 +18,8 @@ In MagicaVoxel, execute **xs pseudofractal 1.0 1.0 1.0 1.01 26. 0.4 0** in its c
 - **yscale :** The scale on the Y axis. Small number stretches the axis, large number condenses it.
 - **zscale :** The scale on the Z axis. Small number stretches the axis, large number condenses it.
 - **distOrder :** The algorithm uses [Minkowski distance](https://en.wikipedia.org/wiki/Minkowski_distance) which is a generalization of Euclidean and Manhattan distance. This parameter control the "order" of the distance. Values larger than 2 tend to result in squarish structure with flat surfaces. Values very close to 1 (i.e. 1.001) tend to result in regular octahedra. Recommended values are between 0.5 and 2.5.
-- **seed :** The "magic" value used to generate the pseudofractal. To be specific it is used as a modulus. A value of 1 or 0 will always result in an empty volume.
-- **threshold :** A value of 0 means that all voxels are considered as dead. A value of 1 means that all voxels are considered as alive.
+- **seed :** The "magic" value used to generate the pseudofractal. To be specific it is used as a modulus. A value of 0 will always result in an empty volume.
+- **threshold :** Controls the ratio of live (solid) voxels. A value of 0 means that all voxels are considered as dead. A value of 1 means that all voxels are considered as alive.
 - **cleaning :** If set and above 0, single / isolated voxels will be removed from the resulting volume.
 
 ## Recommended workflow
