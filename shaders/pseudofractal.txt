@@ -22,7 +22,7 @@ float map(vec3 v) {
 	float minkowskiDistanceOrder = max(iArgs[3], 0.); // 2. is euclidean distance
 	float pseudoFractalModulo = iArgs[4];
 	float threshold = clamp(iArgs[5], 0., 1.);
-	bool cleaning = iArgs[6] > 0.;
+	float cleaning = iArgs[6];
 
 	if (length(scale) == 0.) {
 		scale = vec3(1.);
@@ -33,7 +33,7 @@ float map(vec3 v) {
 
 	float c = process(p, minkowskiDistanceOrder, pseudoFractalModulo, threshold, scale);
 
-	if (c > 0. && cleaning == true) {
+	if (c > 0. && cleaning > 0.) {
 		float u = process(p + vec3(0., 0., 1.), minkowskiDistanceOrder, pseudoFractalModulo, threshold, scale);
 		float d = process(p + vec3(0., 0., -1.), minkowskiDistanceOrder, pseudoFractalModulo, threshold, scale);
 		float l = process(p + vec3(1., 0., 0.), minkowskiDistanceOrder, pseudoFractalModulo, threshold, scale);
