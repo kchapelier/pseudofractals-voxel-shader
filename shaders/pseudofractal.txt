@@ -1,5 +1,6 @@
 // console commands
 // 'xs pseudofractal xscale yscale zscale distOrder seed threshold cleaning'
+// version 1.0.1
 
 float process (vec3 p, float minkowskiDistanceOrder, float pseudoFractalModulo, float threshold, vec3 scale) {
 	//coordinate scaling
@@ -32,7 +33,7 @@ float map(vec3 v) {
 
 	float c = process(p, minkowskiDistanceOrder, pseudoFractalModulo, threshold, scale);
 
-	if (c && cleaning) {
+	if (c > 0. && cleaning == true) {
 		float u = process(p + vec3(0., 0., 1.), minkowskiDistanceOrder, pseudoFractalModulo, threshold, scale);
 		float d = process(p + vec3(0., 0., -1.), minkowskiDistanceOrder, pseudoFractalModulo, threshold, scale);
 		float l = process(p + vec3(1., 0., 0.), minkowskiDistanceOrder, pseudoFractalModulo, threshold, scale);
