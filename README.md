@@ -29,7 +29,7 @@ In MagicaVoxel, execute **xs pseudofractal 1.0 1.0 1.0 1.01 26. 0.4 0** in its c
  * Fine tune the `threshold` and eventually enable `cleaning` if there too many isolated voxels.
  * For best result, render in MagicaVoxel with marching cubes (requires 0.98.2 or lower as the current version do not support voxel shapes).
 
-## Additionnal notes
+## Additional notes
 
  * Thank to [Alien](https://twitter.com/LienTheAlien) who first introduced me to pseudofractals ;)
  * Check Jes Wolfe's talk on the subject ([youtube](https://t.co/NcJOgdn0bu)) if you want to learn more about pseudofractals.
