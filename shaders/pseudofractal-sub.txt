@@ -1,5 +1,5 @@
 // console commands
-// 'xs pseudofractal xscale yscale zscale distOrder seed threshold cleaning'
+// 'xs pseudofractal-sub xscale yscale zscale distOrder seed threshold cleaning'
 // version 1.1.0
 
 float process (vec3 p, float minkowskiDistanceOrder, float pseudoFractalModulo, float threshold, vec3 scale) {
@@ -44,5 +44,5 @@ float map(vec3 v) {
 		c = (u + d + l + r + f + b) > 0. ? 1. : 0.;
 	}
 
-	return c;
+	return voxel(v) * c;
 }

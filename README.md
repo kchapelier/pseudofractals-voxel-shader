@@ -2,6 +2,8 @@
 
 Voxel shader (for [MagicaVoxel](https://ephtracy.github.io/)) to generate pseudofractal volumes.
 
+![pseudofractals-voxel-shader example](https://github.com/kchapelier/pseudofractals-voxel-shader/raw/master/images/header.png "")
+
 ## Installing and updating
 
 Copy the files in `shaders/` to the `shader/` folder in your installation of MagicaVoxel.
@@ -29,6 +31,47 @@ In MagicaVoxel, execute **xs pseudofractal 1.0 1.0 1.0 1.01 26. 0.4 0** in its c
  * Fine tune the `threshold` and eventually enable `cleaning` if there too many isolated voxels.
  * For best result, render in MagicaVoxel with marching cubes (requires 0.98.2 or lower as the current version do not support voxel shapes).
 
+## Variants
+
+Included are two variants of the shader.
+
+`pseudofractal-sub` allows to carve an existing volume with the negative space of the pseudofractal.
+
+`pseudofractal-add` allows to add the pseudofractal to an existing volume without affecting any of its own voxels.
+
+Both variants use the same parameters as the main shader.
+
+## Examples
+
+ * https://twitter.com/kchplr/status/1042853519244636160
+ * https://twitter.com/kchplr/status/1043258155118014464
+ * https://twitter.com/ephtracy/status/1044071076379185152
+ * https://twitter.com/ephtracy/status/1044087775526604801
+ * https://twitter.com/NNNenov/status/1044068357367058432
+ * https://twitter.com/Omegafoxxx/status/1043324264529649664
+ 
+
+#### xs pseudofractal 1.0 1.0 1.0 1.0 0.7 0.4 1
+
+![xs pseudofractal 1.0 1.0 1.0 1.0 0.7 0.4 1](https://github.com/kchapelier/pseudofractals-voxel-shader/raw/master/images/pseudo00b.png "")
+
+#### xs pseudofractal 1.10 1.10 1.10 1.00001 0.1 0.5 1
+
+![xs pseudofractal 1.10 1.10 1.10 1.00001 0.1 0.5 1](https://github.com/kchapelier/pseudofractals-voxel-shader/raw/master/images/pseudo01b.png "")
+
+#### xs pseudofractal .25 .25 .25 1.33 1.91 0.55 1
+
+![xs pseudofractal .25 .25 .25 1.33 1.91 0.55 1](https://github.com/kchapelier/pseudofractals-voxel-shader/raw/master/images/pseudo02b.png "")
+
+#### xs pseudofractal .5 .5 .5 1.995 0.751 0.55 1
+
+![xs pseudofractal .5 .5 .5 1.995 0.751 0.55 1](https://github.com/kchapelier/pseudofractals-voxel-shader/raw/master/images/pseudo03b.png "")
+
+#### xs pseudofractal 1.5 1.5 0.5 2.0 0.179929 0.5 1
+
+![xs pseudofractal 1.5 1.5 0.5 2.0 0.179929 0.5 1](https://github.com/kchapelier/pseudofractals-voxel-shader/raw/master/images/pseudo04b.png "")
+
+
 ## Additionnal notes
 
  * Thank to [Alien](https://twitter.com/LienTheAlien) who first introduced me to pseudofractals ;)
@@ -36,6 +79,11 @@ In MagicaVoxel, execute **xs pseudofractal 1.0 1.0 1.0 1.01 26. 0.4 0** in its c
  * If you're interested in this kind of structure generation but want something more predictable and less random, please check [cellular-automata-voxel-shader](https://github.com/kchapelier/cellular-automata-voxel-shader).
 
 ## History
+
+### 1.1.0 (2018-10-05) :
+
+ * Add sub and add variants.
+ * Add examples in doc.
 
 ### 1.0.1 (2018-09-19) :
 
