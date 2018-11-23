@@ -72,7 +72,7 @@ Both variants use the same parameters as the main shader.
 ![xs pseudofractal 1.5 1.5 0.5 2.0 0.179929 0.5 1](https://github.com/kchapelier/pseudofractals-voxel-shader/raw/master/images/pseudo04b.png "")
 
 
-## Additionnal notes
+## Additional notes
 
  * Thank to [Alien](https://twitter.com/LienTheAlien) who first introduced me to pseudofractals ;)
  * Check Jes Wolfe's talk on the subject ([youtube](https://t.co/NcJOgdn0bu)) if you want to learn more about pseudofractals.
