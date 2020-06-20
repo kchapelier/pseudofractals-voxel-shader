@@ -29,7 +29,7 @@ In MagicaVoxel, execute **xs pseudofractal 1.0 1.0 1.0 1.01 26. 0.4 0** in its c
  * Start with the `*scale` set to 1, `distOrder` set to 2. or 1.001, `seed` set to a number other than 1 and 0 and `threshold` set to 0.5.
  * Tweak the `*scale`, `distOrder` and `seed` until you have an interesting volume.
  * Fine tune the `threshold` and eventually enable `cleaning` if there too many isolated voxels.
- * For best result, render in MagicaVoxel with marching cubes (requires 0.98.2 or lower as the current version do not support voxel shapes).
+ * For best result, render in MagicaVoxel with marching cubes.
 
 ## Variants
 
@@ -79,6 +79,10 @@ Both variants use the same parameters as the main shader.
  * If you're interested in this kind of structure generation but want something more predictable and less random, please check [cellular-automata-voxel-shader](https://github.com/kchapelier/cellular-automata-voxel-shader).
 
 ## History
+
+### 1.2.0 (2020-06-20) :
+
+ * Add experimental brush shader for the new voxel brush feature in MagicaVoxel (0.99.5.1).
 
 ### 1.1.0 (2018-10-05) :
 
